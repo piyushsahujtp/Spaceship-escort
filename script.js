@@ -107,6 +107,22 @@ function nextWave()
 	setTimeout("document.getElementById('gameMSG').style.opacity='0'; ",2000);
 	}
 
+document.addEventListener('DOMContentLoaded', (event) => {
+  const toggleButton = document.getElementById('toggle-button');
+  const currentMode = localStorage.getItem('mode') || 'light';
+
+  document.body.classList.add(`${currentMode}-mode`);
+
+  toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    document.body.classList.toggle('light-mode');
+
+    const newMode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    localStorage.setItem('mode', newMode);
+  });
+});
+
+
 function nextWave2()
 	{
 	document.getElementById('gameMSG').style.opacity='0';
