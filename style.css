@@ -62,7 +62,25 @@ html, body {
 @keyframes blinker2 {  
 	50% { opacity: 0.1; }
 }
+body {
+  transition: background-color 0.5s, color 0.5s;
+}
 
+body.light-mode {
+  background-color: white;
+  color: black;
+}
+
+body.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+button {
+  margin: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
 
 
 .knockout {
